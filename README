@@ -38,8 +38,18 @@ Now you can see it has been started:
 
 Then just re-attach as normal with screen -rx
 
+= View/change the configuration
+
+All the configuration for the leech user is stored in git. Edit stuff
+in ~leech/leech and commit/push/pull as appropriate. You can also edit
+it under your own cloned repository and push back if you're in the
+leech group.
+
 = Not fuck shit up
 
 Read the screen manual via `info screen` to know what you're doing and
 the rtorrent manual at `man rtorrent'. The screen `fit' command is of
 particular interest.
+
+http://wiki.archlinux.org/index.php/RTorrent_-_commandline_bittorrent_client#Controls
+is also a good resource.
