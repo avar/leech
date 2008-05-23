@@ -1,0 +1,45 @@
+The leech user is here to manage torrent downloads and other leeching,
+how do I..?
+
+= Start a torrent download
+
+Place the .torrent file you want to download in
+/home/leech/torrent/queue/
+
+= Monitor my download
+
+ssh leech@nix.is
+screen -rx
+
+DON'T use screen -rd as that will detach everyone else from the
+screen. (And on that subject read the `Not fuck shit up' section)
+
+= Start the torrent screen
+
+If the torrent screen hasn't been started already this is how you
+start it:
+
+See if any screen is running already:
+    
+    leech@t:~$ screen -ls
+    No Sockets found in /var/run/screen/S-leech.
+
+No? Start it:
+    
+    leech@t:~$ screen
+    [detached]
+
+Now you can see it has been started:
+
+    leech@t:~$ screen -ls
+    There is a screen on:
+            19583.pts-3.t   (Detached)
+    1 Socket in /var/run/screen/S-leech.
+
+Then just re-attach as normal with screen -rx
+
+= Not fuck shit up
+
+Read the screen manual via `info screen` to know what you're doing and
+the rtorrent manual at `man rtorrent'. The screen `fit' command is of
+particular interest.

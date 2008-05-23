@@ -1,0 +1,9 @@
+nethack on
+
+# Emacs keybindings on C-a [
+markkeys "h=^B:l=^F:$=^E"
+
+caption always "%{= kw}%-w%{= gW}%n %t%{-}%+w %-= %{= r}%H%{-} %{= g}%l%{-} %D %Y-%m-%d %c:%s"
+
+screen -t torrent 0 rtorrent
+detach
