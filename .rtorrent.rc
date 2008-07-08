@@ -7,7 +7,7 @@ safe_sync = yes
 schedule = watch_directory,10,10,load_start=/home/leech/torrent/queue/*.torrent
 schedule = tied_directory,10,10,start_tied=
 schedule = untied_directory,10,10,close_untied=
-schedule = low_diskspace,5,60,close_low_diskspace=200M
+schedule = low_diskspace,5,60,close_low_diskspace=500M
 
 min_peers = 50
 max_peers = 500
