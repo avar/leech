@@ -24,6 +24,6 @@ hash_interval = 10
 
 umask = 022
 
-dht = on
-dht_port = 6881
-peer_exchange = yes
+#dht = on
+#dht_port = 6881
+#peer_exchange = yes
