@@ -10,6 +10,8 @@ schedule = untied_directory,10,10,close_untied=
 schedule = low_diskspace,5,60,close_low_diskspace=500M
 schedule = ratio,60,60,stop_on_ratio=150
 
+on_finished = notify_failo,"execute=/home/hinrik/src/failo/torrent-done,$d.get_tied_to_file="
+
 min_peers = 50
 max_peers = 500
 min_peers_seed = 50
