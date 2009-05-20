@@ -1,6 +1,6 @@
 port_range = 38100-38100
 port_random=no
-directory = /home/leech/torrent/files
+directory = /home/leech/torrent/incomplete
 session = /home/leech/torrent/session
 encryption = allow_incoming,try_outgoing
 safe_sync = yes
@@ -10,7 +10,14 @@ schedule = untied_directory,10,10,close_untied=
 schedule = low_diskspace,5,60,close_low_diskspace=500M
 schedule = ratio,60,60,stop_on_ratio=150
 
-on_finished = notify_failo,"execute=/home/hinrik/src/failo/torrent-done,$d.get_tied_to_file=,$d.get_name="
+on_insert = utor_enqueue,"execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,enqueue"
+on_finished = move_complete,"execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
+on_finished = utor_finish,"execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,finish"
+
+## XML-RPC
+scgi_port = localhost:5000
+# XML-RPC uses UTF-8
+encoding_list = UTF-8
 
 min_peers = 50
 max_peers = 500
