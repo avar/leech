@@ -35,4 +35,4 @@ umask = 022
 
 #dht = on
 #dht_port = 6881
-peer_exchange = yes
+#peer_exchange = yes
