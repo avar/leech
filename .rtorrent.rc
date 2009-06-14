@@ -8,7 +8,7 @@ schedule = watch_directory,10,10,load_start=/home/leech/torrent/queue/*.torrent
 schedule = tied_directory,10,10,start_tied=
 schedule = untied_directory,10,10,close_untied=
 schedule = low_diskspace,5,60,close_low_diskspace=500M
-schedule = ratio,60,60,stop_on_ratio=150
+#schedule = ratio,60,60,stop_on_ratio=150
 
 # See http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
 system.method.set_key = event.download.inserted_new, utor_enqueue, "execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,enqueue"
