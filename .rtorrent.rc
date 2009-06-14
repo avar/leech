@@ -10,9 +10,10 @@ schedule = untied_directory,10,10,close_untied=
 schedule = low_diskspace,5,60,close_low_diskspace=500M
 schedule = ratio,60,60,stop_on_ratio=150
 
-on_insert = utor_enqueue,"execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,enqueue"
-on_finished = move_complete,"execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
-on_finished = utor_finish,"execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,finish"
+# See http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
+system.method.set_key = event.download.inserted_new, utor_enqueue, "execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,enqueue"
+system.method.set_key = event.download.finished, move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
+system.method.set_key = event.download.finished, utor_finish, "execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,finish"
 
 ## XML-RPC
 scgi_port = localhost:5000
