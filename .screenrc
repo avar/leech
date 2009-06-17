@@ -6,4 +6,6 @@ markkeys "h=^B:l=^F:$=^E"
 caption always "%{= kw}%-w%{= gW}%n %t%{-}%+w %-= %{= r}%H%{-} %{= g}%l%{-} %D %Y-%m-%d %c:%s"
 
 screen -t torrent 0 rtorrent
+screen -t bondage 1 bondage -d -w utor/
+screen -t utor    2 utor/torrent-announce
 detach
