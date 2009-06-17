@@ -11,8 +11,8 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 ratio.max.set=150
 
 # torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
-system.method.set_key = event.download.inserted_new, utor_enqueue, "execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,enqueue"
-system.method.set_key = event.download.finished,      utor_finish, "execute=/home/hinrik/src/utor/torrent-queue,$d.get_hash=,finish"
+system.method.set_key = event.download.inserted_new, utor_enqueue, "execute=/home/leech/utor/torrent-queue,$d.get_hash=,enqueue"
+system.method.set_key = event.download.finished,      utor_finish, "execute=/home/leech/utor/torrent-queue,$d.get_hash=,finish"
 
 # Move torrents to complete/ when they're done
 system.method.set_key = event.download.finished, move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
