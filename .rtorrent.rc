@@ -2,7 +2,7 @@ port_range = 38100-38100
 directory = /home/leech/torrent/incomplete
 session = /home/leech/torrent/session
 encryption = allow_incoming,try_outgoing
-safe_sync = yes
+
 schedule = watch_directory,10,10,load_start=/home/leech/torrent/queue/*.torrent
 schedule = tied_directory,10,10,start_tied=
 schedule = untied_directory,10,10,close_untied=
