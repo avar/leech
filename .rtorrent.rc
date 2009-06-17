@@ -1,5 +1,4 @@
 port_range = 38100-38100
-port_random=no
 directory = /home/leech/torrent/incomplete
 session = /home/leech/torrent/session
 encryption = allow_incoming,try_outgoing
