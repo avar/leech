@@ -11,16 +11,16 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 ratio.max.set=150
 
 # torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
-system.method.set_key = event.download.inserted_new, utor_enqueue, "execute=/home/leech/utor/torrent-queue,$d.get_hash=,enqueue"
-system.method.set_key = event.download.finished,      utor_finish, "execute=/home/leech/utor/torrent-queue,$d.get_hash=,finish"
+system.method.set_key = event.download.inserted_new, utor_inserted_new, "execute=/home/leech/utor/torrent-queue,inserted_new,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1"
+system.method.set_key = event.download.finished,         utor_finished, "execute=/home/leech/utor/torrent-queue,finished,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1,$d.get_name=1"
 
 # Move torrents to complete/ when they're done
 system.method.set_key = event.download.finished, move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
 
 ## XML-RPC
-scgi_port = localhost:5000
+#scgi_port = localhost:5000
 # XML-RPC uses UTF-8
-encoding_list = UTF-8
+#encoding_list = UTF-8
 
 min_peers = 50
 max_peers = 500
