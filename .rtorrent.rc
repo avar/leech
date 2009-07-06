@@ -8,7 +8,16 @@ schedule = tied_directory,10,10,start_tied=
 schedule = untied_directory,10,10,close_untied=
 schedule = low_diskspace,5,60,close_low_diskspace=500M
 
+## Ratio handling - http://libtorrent.rakshasa.no/wiki/RTorrentRatioHandling
+
+# Enable the default ratio group.
+ratio.enable=
 ratio.max.set=150
+
+# Changing the command triggered when the ratio is reached.
+system.method.set = group.seeding.ratio.command, d.close=, d.erase=
+
+## Hooks
 
 # torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
 system.method.set_key = event.download.inserted_new, utor_inserted_new, "execute=/home/leech/utor/torrent-queue,inserted_new,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1"
