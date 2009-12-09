@@ -10,8 +10,8 @@ Place the .torrent file you want to download in
 
 ## Monitor my download
 
-ssh leech@nix.is
-screen -rx
+    ssh leech@nix.is
+    screen -rx
 
 DON'T use screen -rd as that will detach everyone else from the
 screen. (And on that subject read the `Not fuck shit up' section)
