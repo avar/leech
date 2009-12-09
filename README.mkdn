@@ -49,7 +49,7 @@ week) and fork/commit/push/pull as appropriate.
 ## Not fuck shit up
 
 Read the screen manual via `info screen` to know what you're doing and
-the rtorrent manual at `man rtorrent'. The screen `fit' command is of
+the rtorrent manual at `man rtorrent`. The screen `fit` command is of
 particular interest.
 
 http://wiki.archlinux.org/index.php/RTorrent_-_commandline_bittorrent_client#Controls
