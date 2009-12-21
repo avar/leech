@@ -30,9 +30,9 @@ execute_log = ~/torrent/log/exec.log
 system.method.set_key = event.download.finished, move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
 
 ## XML-RPC
-#scgi_port = localhost:5000
+scgi_local = /home/leech/torrent/rpc.socket
 # XML-RPC uses UTF-8
-#encoding_list = UTF-8
+encoding_list = UTF-8
 
 min_peers = 50
 max_peers = 500
