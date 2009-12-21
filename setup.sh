@@ -22,7 +22,7 @@ cd -
 
 # Link dotfiles
 if type link-files >&/dev/null; then
-    HOME=$LEECH link-files -a setup.sh -a README.mkdn
+    link-files --source . --dest $LEECH -a setup.sh -a README.mkdn
 else
     echo "Perl module File::Linkdir not installed; dotfiles not linked"
     exit 1
