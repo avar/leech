@@ -21,10 +21,10 @@ mv $RTOM rtom
 cd -
 
 # Link dotfiles
-if [ -f /home/avar/src/dotfiles/dotlink.pl ]; then
-    HOME=/home/leech perl /home/avar/src/dotfiles/dotlink.pl
+if type link-files >&/dev/null; then
+    HOME=$LEECH link-files -a setup.sh -a README.mkdn
 else
-    echo "/home/avar/src/dotfiles/dotlink.pl doesn't exist, dotfiles not linked"
+    echo "Perl module File::Linkdir not installed; dotfiles not linked"
     exit 1
 fi
-    
+
