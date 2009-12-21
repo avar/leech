@@ -79,6 +79,9 @@ fi
 # some nice shell options
 shopt -s checkwinsize cdspell dotglob histappend nocaseglob no_empty_cmd_completion
 
+alias ll="ls -lh"
+alias scp="rsync --rsh=ssh --archive --append --human-readable --progress --times"
+
 # some nice less(1) options
 export LESS="iMQRS"
 
