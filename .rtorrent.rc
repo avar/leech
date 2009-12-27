@@ -11,8 +11,8 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 ## Ratio handling - http://libtorrent.rakshasa.no/wiki/RTorrentRatioHandling
 
 # Enable the default ratio group.
-ratio.enable=
-ratio.max.set=150
+#ratio.enable=
+#ratio.max.set=150
 
 # Changing the command triggered when the ratio is reached.
 system.method.set = group.seeding.ratio.command, d.close=, d.erase=
@@ -45,6 +45,12 @@ download_rate = 0
 hash_read_ahead = 8
 hash_max_tries = 5
 hash_interval = 10 
+
+## Memory tweaking
+### See: http://mybookworld.wikidot.com/forum/t-50183/rtorrent:run-out-of-memory
+###      http://libtorrent.rakshasa.no/wiki/RTorrentPerformanceTuning
+send_buffer_size = 4096
+receive_buffer_size = 4096
 
 umask = 022
 
