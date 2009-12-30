@@ -11,5 +11,5 @@ bind 0 select 10
 screen -t torrent 1 rtorrent
 screen -t bondage 2 bondage -d -w ~/utor/
 screen -t utor    3 utor/torrent-announce
-select 0
+select 1
 detach
