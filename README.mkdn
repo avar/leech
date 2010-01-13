@@ -11,7 +11,12 @@ Place the .torrent file you want to download in
 ## Monitor my download
 
     ssh leech@nix.is
-    screen -rx
+    screen -x
+
+## Or, if you have sudo access, you can do it with your normal user
+
+    ssh nix.is
+    sudo screen -x leech/
 
 DON'T use screen -rd as that will detach everyone else from the
 screen. (And on that subject read the `Not fuck shit up' section)
@@ -38,7 +43,7 @@ Now you can see it has been started:
             19583.pts-3.t   (Detached)
     1 Socket in /var/run/screen/S-leech.
 
-Then just re-attach as normal with screen -rx
+Then just re-attach as normal with screen -x
 
 ## View/change the configuration
 
