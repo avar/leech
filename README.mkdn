@@ -57,5 +57,5 @@ Read the screen manual via `info screen` to know what you're doing and
 the rtorrent manual at `man rtorrent`. The screen `fit` command is of
 particular interest.
 
-http://wiki.archlinux.org/index.php/RTorrent_-_commandline_bittorrent_client#Controls
+http://wiki.archlinux.org/index.php/RTorrent\_-\_commandline_bittorrent_client#Controls
 is also a good resource.
