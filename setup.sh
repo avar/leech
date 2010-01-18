@@ -5,7 +5,7 @@ RTOM_FILE="$RTOM.tar.gz"
 RTOM_URL="http://projects.cyla.homeip.net/rtwi/downloads/rtom/$RTOM_FILE"
 
 # rtorrent dirs
-mkdir -p $LEECH/torrent/{complete,incomplete,queue,session,log}
+mkdir -p $LEECH/torrent/{complete,incomplete,queue,session}
 
 # Handy symlinks
 ln -s $LEECH/torrent/complete   $LEECH/c

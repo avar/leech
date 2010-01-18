@@ -23,9 +23,6 @@ system.method.set = group.seeding.ratio.command, d.close=, d.erase=
 system.method.set_key = event.download.inserted_new, utor_inserted_new, "execute=/home/leech/utor/torrent-queue,inserted_new,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1"
 system.method.set_key = event.download.finished,         utor_finished, "execute=/home/leech/utor/torrent-queue,finished,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1,$d.get_name=1"
 
-# Log command executions. This config variable is helpfully undocumented by rtorrent
-execute_log = ~/torrent/log/exec.log
-
 # Move torrents to complete/ when they're done
 system.method.set_key = event.download.finished, move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
 
