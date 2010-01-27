@@ -1,5 +1,8 @@
 nethack on
 
+# Turn off the startup banner
+startup_message off
+
 # Emacs keybindings on C-a [
 markkeys "h=^B:l=^F:$=^E"
 
