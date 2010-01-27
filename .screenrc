@@ -14,7 +14,7 @@ multiuser on
 acladd root
 
 screen -t torrent 0 rtorrent
-screen -t bondage 1 bondage -d -w ~/utor/
+screen -t bondage 1 bondage -d -w utor
 screen -t utor    2 utor/torrent-announce
 select 0
 detach
