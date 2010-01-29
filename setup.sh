@@ -21,7 +21,7 @@ mv $RTOM rtom
 cd -
 
 # Link dotfiles
-if type link-files >&/dev/null; then
+if type link-files >/dev/null; then
     link-files --source . --dest $LEECH -a setup.sh -a README.mkdn
 else
     echo "Perl module File::Linkdir not installed; dotfiles not linked"
