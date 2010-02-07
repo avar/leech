@@ -14,8 +14,8 @@ multiuser on
 acladd root
 
 sessionname torrent
-screen -t torrent 0 rtorrent
-screen -t bondage 1 bondage -d -w utor
-screen -t utor    2 utor/torrent-announce
+screen -t torrent 0 nice -n 2 rtorrent
+screen -t bondage 1 nice -n 2 bondage -d -w utor
+screen -t utor    2 nice -n 2 utor/torrent-announce
 select 0
 detach
