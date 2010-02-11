@@ -27,7 +27,7 @@ system.method.set_key = event.download.finished,         utor_finished, "execute
 system.method.set_key = event.download.finished, move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
 
 ## XML-RPC
-scgi_local = /home/leech/torrent/rpc.socket
+scgi_port = localhost:1337
 # XML-RPC uses UTF-8
 encoding_list = UTF-8
 
