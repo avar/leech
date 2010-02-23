@@ -1,12 +1,22 @@
-port_range = 666-666
+port_range = 9001-9010
 directory = /home/leech/torrent/incomplete
 session = /home/leech/torrent/session
 encryption = allow_incoming,try_outgoing
 
-schedule = watch_directory,10,10,load_start=/home/leech/torrent/queue/*.torrent
-schedule = tied_directory,10,10,start_tied=
-schedule = untied_directory,10,10,close_untied=
-schedule = low_diskspace,5,60,close_low_diskspace=500M
+## Throttles
+
+# General throttle for everyone. This should never be used except
+# maybe if torrents are added manually
+download_rate = 500
+upload_rate = 300
+
+# Muggle throttle
+throttle_up   = muggle, 400
+throttle_down = muggle, 0
+
+# Poweruser thottle
+throttle_up   = power, 3000
+throttle_down = power, 0
 
 ## Ratio handling - http://libtorrent.rakshasa.no/wiki/RTorrentRatioHandling
 
@@ -14,8 +24,22 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 ratio.enable=
 ratio.max.set=150
 
+# Ratio disabled for powerseeding group
+group.insert_persistent_view = powerseeding
+group.powerseeding.ratio.disable=
+
 # Changing the command triggered when the ratio is reached.
 system.method.set = group.seeding.ratio.command, d.close=, d.erase=
+
+## Schedules
+# Pick up torrents from queues
+schedule = watch_directory_muggles,     10,10,"load_start=/home/leech/torrent/queue/*.torrent, d.set_throttle_name=muggle"
+schedule = watch_directory_powerseeding,10,10,"load_start=/home/leech/torrent/queue-powerseeding/*.torrent, view.set_visible=powerseeding, d.set_throttle_name=power"
+
+# Misc general schedules
+schedule = tied_directory,10,10,start_tied=
+schedule = untied_directory,10,10,close_untied=
+schedule = low_diskspace,5,60,close_low_diskspace=500M
 
 ## Hooks
 
@@ -36,8 +60,6 @@ max_peers = 500
 min_peers_seed = 50
 max_peers_seed = 100
 max_uploads = 40
-upload_rate = 700
-download_rate = 0
 
 hash_read_ahead = 8
 hash_max_tries = 5
