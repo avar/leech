@@ -15,7 +15,7 @@ ratio.enable=
 ratio.max.set=150
 
 # Changing the command triggered when the ratio is reached.
-#system.method.set = group.seeding.ratio.command, d.close=, d.erase=
+system.method.set = group.seeding.ratio.command, d.close=, d.erase=
 
 ## Hooks
 
