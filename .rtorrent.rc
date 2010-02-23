@@ -1,4 +1,4 @@
-port_range = 38100-38100
+port_range = 666-666
 directory = /home/leech/torrent/incomplete
 session = /home/leech/torrent/session
 encryption = allow_incoming,try_outgoing
@@ -11,8 +11,8 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 ## Ratio handling - http://libtorrent.rakshasa.no/wiki/RTorrentRatioHandling
 
 # Enable the default ratio group.
-#ratio.enable=
-#ratio.max.set=150
+ratio.enable=
+ratio.max.set=150
 
 # Changing the command triggered when the ratio is reached.
 #system.method.set = group.seeding.ratio.command, d.close=, d.erase=
