@@ -22,11 +22,13 @@ throttle_down = power, 0
 
 # Enable the default ratio group.
 ratio.enable=
-ratio.max.set=150
+ratio.max.set=137
 
 # Ratio disabled for powerseeding group
 group.insert_persistent_view = powerseeding
-group.powerseeding.ratio.disable=
+group.powerseeding.ratio.enable=
+group.powerseeding.ratio.max.set=500
+
 
 # Changing the command triggered when the ratio is reached.
 system.method.set = group.seeding.ratio.command, d.close=, d.erase=
