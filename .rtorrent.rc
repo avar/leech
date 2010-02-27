@@ -7,7 +7,7 @@ encryption = allow_incoming,try_outgoing
 
 # General throttle for everyone. This should never be used except
 # maybe if torrents are added manually
-download_rate = 500
+download_rate = 3000
 upload_rate = 300
 
 # Muggle throttle
