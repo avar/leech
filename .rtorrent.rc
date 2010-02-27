@@ -45,12 +45,15 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 
 ## Hooks
 
-# torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
-system.method.set_key = event.download.inserted_new, utor_inserted_new, "execute=/home/leech/utor/torrent-queue,inserted_new,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1"
-system.method.set_key = event.download.finished,         utor_finished, "execute=/home/leech/utor/torrent-queue,finished,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1,$d.get_name=1"
-
 # Move torrents to complete/ when they're done
-system.method.set_key = event.download.finished, move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
+system.method.set_key = event.download.finished, a_move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
+# torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
+system.method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/tmp/torrentlog,/home/leech/torrent/complete,inserted_new,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1"
+system.method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/tmp/torrentlog,/home/leech/torrent/complete,finished,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1,$d.get_name=1"
+
+## Logging
+log.execute = /home/leech/torrent/log/exec.log
+log.xmlrpc  = /home/leech/torrent/log/xmlrpc.log
 
 ## XML-RPC
 scgi_port = localhost:1337
