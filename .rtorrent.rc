@@ -48,8 +48,9 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 # Move torrents to complete/ when they're done
 system.method.set_key = event.download.finished, a_move_complete, "execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
 # torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
-system.method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/tmp/torrentlog,/home/leech/torrent/complete,inserted_new,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1"
-system.method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/tmp/torrentlog,/home/leech/torrent/complete,finished,$d.get_hash=,$d.get_size_bytes=1,$d.get_loaded_file=1,$d.get_name=1"
+system.method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/tmp/torrentlog,inserted_new,$d.get_name=,$d.get_size_bytes=1,$d.get_loaded_file=1"
+system.method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/tmp/torrentlog,finished,$d.get_name=,$d.get_size_bytes=1,$d.get_loaded_file=1,/home/leech/torrent/complete"
+system.method.set_key = event.download.erased,irctor_erased,"execute=irctor-queue,/tmp/torrentlog,erased,$d.get_name=,$d.get_size_bytes=1,$d.get_completed_bytes=1,$d.get_up_total=1,$d.get_ratio=1"
 
 ## Logging
 log.execute = /home/leech/torrent/log/exec.log
