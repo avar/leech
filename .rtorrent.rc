@@ -22,14 +22,19 @@ throttle_down = power, 0
 
 ## Ratio handling - http://libtorrent.rakshasa.no/wiki/RTorrentRatioHandling
 
-# Enable the default ratio group.
-ratio.enable=
-ratio.max.set=137
+# Disable the default ratio group, this will otherwise override the
+# groups below.
+ratio.disable=
 
-# Ratio disabled for powerseeding group
-group.insert_persistent_view = powerseeding
-group.powerseeding.ratio.enable=
-group.powerseeding.ratio.max.set=500
+# Ratio for muggle group
+group.insert_persistent_view = muggle_group
+group.muggle_group.ratio.enable=
+group.muggle_group.ratio.max.set=137
+
+# Ratio for powerseeding group
+group.insert_persistent_view = power_group
+group.power_group.ratio.enable=
+group.power_group.ratio.max.set=500
 
 
 # Changing the command triggered when the ratio is reached.
@@ -37,8 +42,8 @@ system.method.set = group.seeding.ratio.command, d.close=, d.erase=
 
 ## Schedules
 # Pick up torrents from queues
-schedule = watch_directory_muggles,     10,10,"load_start=/home/leech/torrent/queue/*.torrent, d.set_throttle_name=muggle"
-schedule = watch_directory_powerseeding,10,10,"load_start=/home/leech/torrent/queue-powerseeding/*.torrent, view.set_visible=powerseeding, d.set_throttle_name=power"
+schedule = watch_directory_muggle_group,10,10,"load_start=/home/leech/torrent/queue/*.torrent, view.set_visible=muggle_group, d.set_throttle_name=muggle"
+schedule = watch_directory_power_group, 10,10,"load_start=/home/leech/torrent/queue-powerseeding/*.torrent, view.set_visible=power_group, d.set_throttle_name=power"
 
 # Misc general schedules
 schedule = tied_directory,10,10,start_tied=
