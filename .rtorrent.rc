@@ -1,4 +1,4 @@
-port_range = 9001-9010
+port_range = 9002-9010
 directory = /home/leech/torrent/incomplete
 session = /home/leech/torrent/session
 encryption = allow_incoming,try_outgoing
