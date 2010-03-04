@@ -34,7 +34,7 @@ group.muggle_group.ratio.max.set=137
 # Ratio for powerseeding group
 group.insert_persistent_view = power_group
 group.power_group.ratio.enable=
-group.power_group.ratio.max.set=1000
+group.power_group.ratio.max.set=900
 
 
 # Changing the command triggered when the ratio is reached.
