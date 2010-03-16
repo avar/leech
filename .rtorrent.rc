@@ -24,7 +24,7 @@ throttle_down = power, 0
 
 # Disable the default ratio group, this will otherwise override the
 # groups below.
-ratio.disable=
+#ratio.disable=
 
 # Ratio for muggle group
 group.insert_persistent_view = muggle_group
