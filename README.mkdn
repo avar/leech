@@ -57,6 +57,9 @@ There's a wTorrent web interface at
 [http://leech.nix.is/](http://leech.nix.is/). The user is `leech` and
 the password is `cat ~leech/.htpasswd`.
 
+You can also access the `~leech/torrent` directory
+[via the web](http://leech.nix.is/torrent/) using the same password.
+
 ## Not fuck shit up
 
 Read the screen manual via `info screen` to know what you're doing and
