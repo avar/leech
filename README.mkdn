@@ -51,6 +51,12 @@ All the configuration for the leech user is stored in git. Clone from
 git://github.com/avar/leech.git (or whatever fork is appropriate this
 week) and fork/commit/push/pull as appropriate.
 
+## Use http://leech.nix.is
+
+There's a wTorrent web interface at
+[http://leech.nix.is/](http://leech.nix.is/). The user is `leech` and
+the password is `cat ~leech/.htpasswd`.
+
 ## Not fuck shit up
 
 Read the screen manual via `info screen` to know what you're doing and
