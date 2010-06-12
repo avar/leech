@@ -14,6 +14,9 @@ multiuser on
 acladd root
 
 sessionname torrent
-screen -t torrent 0 nice -n 2 rtorrent
+screen -t torrent  0 rtorrent
+screen -t exec.log 1 tail -f /home/leech/torrent/log/exec.log
+screen -t c        2 bash
+screen -t i        2 bash
 select 0
 detach
