@@ -75,7 +75,7 @@ min_peers = 50
 max_peers = 500
 min_peers_seed = 50
 max_peers_seed = 100
-max_uploads = 40
+max_uploads = 80
 
 hash_read_ahead = 8
 hash_max_tries = 5
