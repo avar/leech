@@ -84,11 +84,11 @@ hash_interval = 10
 ## Memory tweaking
 ### See: http://mybookworld.wikidot.com/forum/t-50183/rtorrent:run-out-of-memory
 ###      http://libtorrent.rakshasa.no/wiki/RTorrentPerformanceTuning
-send_buffer_size = 16384
-receive_buffer_size = 16384
+network.send_buffer.size.set = 16384
+network.receive_buffer.size.set = 16384
 
 umask = 002
 
 dht = on
-dht_port = 6881
+dht.port = 6881
 peer_exchange = yes
