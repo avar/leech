@@ -87,7 +87,7 @@ hash_interval = 10
 network.send_buffer.size.set = 16384
 network.receive_buffer.size.set = 16384
 
-umask = 002
+#umask = 002
 
 dht = on
 dht.port = 6881
