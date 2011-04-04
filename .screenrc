@@ -13,6 +13,10 @@ caption always "%{= kw}%-w%{= gW}%n %t%{-}%+w %-= %{= r}%H%{-} %{= g}%l%{-} %D %
 multiuser on
 acladd root
 
+# leave window open after command is finished,
+# destroy with 'd', resurrect with 'r'
+zombie dr
+
 sessionname torrent
 screen -t torrent  0 rtorrent
 screen -t exec.log 1 tail -f /home/leech/torrent/log/exec.log
