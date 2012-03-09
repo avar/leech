@@ -65,7 +65,7 @@ system.method.set_key = event.download.erased,irctor_erased,"execute=irctor-queu
 
 ## Logging
 log.execute = /home/leech/torrent/log/exec.log
-log.xmlrpc  = /home/leech/torrent/log/xmlrpc.log
+#log.xmlrpc  = /home/leech/torrent/log/xmlrpc.log
 
 ## XML-RPC
 scgi_port = localhost:1337
