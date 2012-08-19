@@ -78,11 +78,6 @@ min_peers_seed = 50
 max_peers_seed = 100
 max_uploads = 80
 
-hash_read_ahead = 8
-hash_max_tries = 5
-hash_interval = 10 
-
-
 ## The following three options seem the have been deprecated. RTorrent won't
 ## start unless I comment them out.
 
