@@ -1,5 +1,7 @@
 test -f ~v-perlbrew/perl5/perlbrew/etc/bashrc && HOME=/home/v-perlbrew source ~v-perlbrew/perl5/perlbrew/etc/bashrc
 
+umask 002
+
 if [[ $- != *i* ]] ; then
     # Shell is non-interactive.  Be done now!
     return
