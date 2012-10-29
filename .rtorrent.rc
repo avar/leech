@@ -36,8 +36,8 @@ group.muggle_group.ratio.upload.set=1M
 # Ratio for powerseeding group
 group.insert_persistent_view = power_group
 group.power_group.ratio.enable=
-group.power_group.ratio.min.set=400
-group.power_group.ratio.max.set=400
+group.power_group.ratio.min.set=800
+group.power_group.ratio.max.set=800
 group.muggle_group.ratio.upload.set=4000M
 
 # Changing the command triggered when the ratio is reached.
