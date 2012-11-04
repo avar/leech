@@ -19,7 +19,7 @@ zombie dr
 
 sessionname torrent
 screen -t torrent  0 rtorrent
-screen -t exec.log 1 tail -f /home/leech/torrent/log/exec.log
+screen -t exec.log 1 tail -F /home/leech/torrent/log/{torrent,exec}.log
 screen -t c        2 bash
 screen -t i        2 bash
 select 0
