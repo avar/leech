@@ -72,6 +72,7 @@ log.execute = /home/leech/torrent/log/exec.log
 
 ## XML-RPC
 scgi_port = localhost:1337
+#scgi_local = /home/leech/torrent/rpc.socket
 # XML-RPC uses UTF-8
 encoding_list = UTF-8
 
