@@ -13,14 +13,17 @@ encryption = allow_incoming,try_outgoing
 #upload_rate = 300
 
 # Muggle throttle
-throttle_up   = muggle, 400
-throttle_down = muggle, 0
+#throttle_up   = muggle, 400
+#throttle_down = muggle, 0
 
 # Poweruser thottle
-throttle_up   = power, 3000
-throttle_down = power, 0
+#throttle_up   = power, 3000
+#throttle_down = power, 0
 
 ## Ratio handling - http://libtorrent.rakshasa.no/wiki/RTorrentRatioHandling
+
+#ratio.enable=
+#ratio.max.set=800
 
 # Disable the default ratio group, this will otherwise override the
 # groups below.
@@ -36,9 +39,9 @@ group.muggle_group.ratio.upload.set=1M
 # Ratio for powerseeding group
 group.insert_persistent_view = power_group
 group.power_group.ratio.enable=
-group.power_group.ratio.min.set=800
-group.power_group.ratio.max.set=800
-group.muggle_group.ratio.upload.set=4000M
+group.power_group.ratio.min.set=137
+group.power_group.ratio.max.set=0
+#group.power_group.ratio.upload.set=4000M
 
 # Changing the command triggered when the ratio is reached.
 system.method.set = group.seeding.ratio.command, d.close=, d.erase=
@@ -92,3 +95,7 @@ max_uploads = 80
 dht = on
 dht_port = 6881
 peer_exchange = yes
+
+# rtorrent by default limits files to 64GB. Increase to 500GB.
+set_max_file_size = 536870912000
+
