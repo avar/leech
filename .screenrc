@@ -20,12 +20,20 @@ zombie dr
 sessionname torrent
 screen -t torrent  0 rtorrent
 screen -t exec.log 1 tail -F /home/leech/torrent/log/torrent.log home/leech/torrent/log/exec.log
+
 screen -t c        2 bash
 stuff "cd ~leech/c^M"
+
 screen -t i        2 bash
 stuff "cd ~leech/i^M"
+
 screen -t git-annex:watch
 stuff "cd /dns/annex/piracy/leech^M"
 stuff "git annex watch --foreground^M"
+
+screen -t git-annex:while
+stuff "cd /dns/annex/piracy/leech^M"
+stuff "while true; do date && git annex add . && git annex sync && sleep 600; done^M"
+
 select 0
 detach
