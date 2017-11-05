@@ -33,7 +33,7 @@ stuff "git annex watch --foreground^M"
 
 screen -t git-annex:while
 stuff "cd /dns/annex/piracy/leech^M"
-stuff "while true; do date && git annex add . && git annex sync && sleep 600; done^M"
+stuff "while true; do date && git annex add . && git annex sync && sleep 60; done^M"
 
 select 0
 detach
