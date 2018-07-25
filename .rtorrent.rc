@@ -48,8 +48,8 @@ method.set = group.seeding.ratio.command, d.close=, d.erase=
 
 ## Schedules
 # Pick up torrents from queues
-schedule = watch_directory_muggle_group,10,10,"load.start=/home/leech/torrent/queue/*.torrent, view.set_visible=muggle_group, d.set_throttle_name=muggle"
-schedule = watch_directory_power_group, 10,10,"load.start=/home/leech/torrent/queue-powerseeding/*.torrent, view.set_visible=power_group, d.set_throttle_name=power"
+schedule = watch_directory_muggle_group,10,10,"load.start=/home/leech/torrent/queue/*.torrent, view.set_visible=muggle_group, d.throttle_name.set=muggle"
+schedule = watch_directory_power_group, 10,10,"load.start=/home/leech/torrent/queue-powerseeding/*.torrent, view.set_visible=power_group, d.throttle_name.set=power"
 
 # Misc general schedules
 schedule = tied_directory,10,10,start_tied=
@@ -59,12 +59,12 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 ## Hooks
 
 # Move torrents to complete/ when they're done
-method.set_key = event.download.finished, a_move_complete, "d.set_directory=/provider/leech/torrent/complete/; execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
+method.set_key = event.download.finished, a_move_complete, "d.directory.set=/provider/leech/torrent/complete/; execute=/bin/mv,-u,$d.base_path=,/home/leech/torrent/complete/ ;d.directory.set=/home/leech/torrent/complete/"
 # torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
-method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,inserted_new,$d.get_name=,$d.get_size_bytes=1,$d.get_tied_to_file=1"
-method.set_key = event.download.hash_queued,irctor_hash_queued,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,hash_queued,$d.get_name=,$d.get_size_bytes=1,$d.get_completed_bytes=1,$d.get_tied_to_file=1,$d.get_complete=1,$d.get_down_total=1"
-method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,finished,$d.get_name=,$d.get_base_filename=1,/home/leech/torrent/complete,1"
-method.set_key = event.download.erased,irctor_erased,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,erased,$d.get_name=,$d.get_size_bytes=1,$d.get_completed_bytes=1,$d.get_up_total=1,$d.get_ratio=1"
+method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,inserted_new,$d.name=,$d.size_bytes=1,$d.tied_to_file=1"
+method.set_key = event.download.hash_queued,irctor_hash_queued,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,hash_queued,$d.name=,$d.size_bytes=1,$d.completed_bytes=1,$d.tied_to_file=1,$d.complete=1,$d.down_total=1"
+method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,finished,$d.name=,$d.base_filename=1,/home/leech/torrent/complete,1"
+method.set_key = event.download.erased,irctor_erased,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,erased,$d.name=,$d.size_bytes=1,$d.completed_bytes=1,$d.up_total=1,$d.ratio=1"
 
 ## Logging
 log.execute = /home/leech/torrent/log/exec.log
