@@ -44,7 +44,7 @@ group.power_group.ratio.max.set=0
 #group.power_group.ratio.upload.set=4000M
 
 # Changing the command triggered when the ratio is reached.
-system.method.set = group.seeding.ratio.command, d.close=, d.erase=
+method.set = group.seeding.ratio.command, d.close=, d.erase=
 
 ## Schedules
 # Pick up torrents from queues
@@ -59,12 +59,12 @@ schedule = low_diskspace,5,60,close_low_diskspace=500M
 ## Hooks
 
 # Move torrents to complete/ when they're done
-system.method.set_key = event.download.finished, a_move_complete, "d.set_directory=/provider/leech/torrent/complete/; execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
+method.set_key = event.download.finished, a_move_complete, "d.set_directory=/provider/leech/torrent/complete/; execute=/bin/mv,-u,$d.get_base_path=,/home/leech/torrent/complete/ ;d.set_directory=/home/leech/torrent/complete/"
 # torrent-queue hooks - see also http://rakshasa.no/pipermail/libtorrent-devel/2008-November/001906.html
-system.method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,inserted_new,$d.get_name=,$d.get_size_bytes=1,$d.get_tied_to_file=1"
-system.method.set_key = event.download.hash_queued,irctor_hash_queued,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,hash_queued,$d.get_name=,$d.get_size_bytes=1,$d.get_completed_bytes=1,$d.get_tied_to_file=1,$d.get_complete=1,$d.get_down_total=1"
-system.method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,finished,$d.get_name=,$d.get_base_filename=1,/home/leech/torrent/complete,1"
-system.method.set_key = event.download.erased,irctor_erased,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,erased,$d.get_name=,$d.get_size_bytes=1,$d.get_completed_bytes=1,$d.get_up_total=1,$d.get_ratio=1"
+method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,inserted_new,$d.get_name=,$d.get_size_bytes=1,$d.get_tied_to_file=1"
+method.set_key = event.download.hash_queued,irctor_hash_queued,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,hash_queued,$d.get_name=,$d.get_size_bytes=1,$d.get_completed_bytes=1,$d.get_tied_to_file=1,$d.get_complete=1,$d.get_down_total=1"
+method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,finished,$d.get_name=,$d.get_base_filename=1,/home/leech/torrent/complete,1"
+method.set_key = event.download.erased,irctor_erased,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,erased,$d.get_name=,$d.get_size_bytes=1,$d.get_completed_bytes=1,$d.get_up_total=1,$d.get_ratio=1"
 
 ## Logging
 log.execute = /home/leech/torrent/log/exec.log
@@ -95,8 +95,7 @@ max_uploads = 80
 
 dht = on
 dht_port = 6881
-peer_exchange = yes
+protocol.pex.set = yes
 
 # rtorrent by default limits files to 64GB. Increase to 500GB.
-set_max_file_size = 536870912000
-
+system.file.max_size.set = 536870912000
