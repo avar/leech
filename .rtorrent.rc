@@ -48,8 +48,8 @@ method.set = group.seeding.ratio.command, d.close=, d.erase=
 
 ## Schedules
 # Pick up torrents from queues
-schedule = watch_directory_muggle_group,10,10,"load_start=/home/leech/torrent/queue/*.torrent, view.set_visible=muggle_group, d.set_throttle_name=muggle"
-schedule = watch_directory_power_group, 10,10,"load_start=/home/leech/torrent/queue-powerseeding/*.torrent, view.set_visible=power_group, d.set_throttle_name=power"
+schedule = watch_directory_muggle_group,10,10,"load.start=/home/leech/torrent/queue/*.torrent, view.set_visible=muggle_group, d.set_throttle_name=muggle"
+schedule = watch_directory_power_group, 10,10,"load.start=/home/leech/torrent/queue-powerseeding/*.torrent, view.set_visible=power_group, d.set_throttle_name=power"
 
 # Misc general schedules
 schedule = tied_directory,10,10,start_tied=
