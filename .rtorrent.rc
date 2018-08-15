@@ -64,7 +64,7 @@ method.set_key = event.download.finished, a_move_complete, "d.directory.set=/pro
 method.set_key = event.download.inserted_new,irctor_inserted_new,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,inserted_new,$d.name=,$d.size_bytes=1,$d.tied_to_file=1"
 method.set_key = event.download.hash_queued,irctor_hash_queued,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,hash_queued,$d.name=,$d.size_bytes=1,$d.completed_bytes=1,$d.tied_to_file=1,$d.complete=1,$d.down.total=1"
 method.set_key = event.download.finished,irctor_finished,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,finished,$d.name=,$d.base_filename=1,/home/leech/torrent/complete,1"
-method.set_key = event.download.erased,irctor_erased,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,erased,$d.name=,$d.size_bytes=1,$d.completed_bytes=1,$d.up_total=1,$d.ratio=1"
+method.set_key = event.download.erased,irctor_erased,"execute=irctor-queue,/home/leech/torrent/log/torrent.log,erased,$d.name=,$d.size_bytes=1,$d.completed_bytes=1,$d.up.total=1,$d.ratio=1"
 
 ## Logging
 log.execute = /home/leech/torrent/log/exec.log
